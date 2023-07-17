@@ -7,9 +7,9 @@ import AgeDisplay from "../AgeDisplay";
 function InputField() {
   const [formData, setFormData] = useState({ day: "", month: "", year: "" });
   const [diffDates, setDiffDates] = useState({
-    days: "",
-    months: "",
-    years: "",
+    days: "--",
+    months: "--",
+    years: "--",
   });
 
   const handleChange = (event) => {
