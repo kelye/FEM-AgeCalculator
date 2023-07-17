@@ -1,7 +1,66 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.main-container {
+  background-color: hsl(0, 0%, 100%);
+  width: 343px;
+  height: 486px;
+  border-bottom-right-radius: 100px;
+}
+
 button {
-  width: 150px;
-  height: 150px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: hsl(259, 100%, 65%);
   border-style: none;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 8%);
+  cursor: pointer;
+}
+
+.button-icon {
+  width: auto;
+  height: 30px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-width: 100%;
+}
+
+form {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+input,
+label {
+  display: block;
+}
+
+.input-container input {
+  width: 60px;
+  height: 40px;
+}
+
+.input-label-container {
+  display: inline-block;
+}
+
+.input-label-container:not(:first-child) {
+  margin-left: 20px;
 }

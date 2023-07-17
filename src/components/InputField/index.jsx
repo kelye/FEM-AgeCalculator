@@ -41,38 +41,45 @@ function InputField() {
   };
 
   return (
-    <div>
-      <form id="age-form" onSubmit={handleSubmit}>
-        <label htmlFor="day">Day</label>
-        <input
-          type="text"
-          id="day"
-          name="day"
-          value={formData.day}
-          onChange={handleChange}
-        />
+    <>
+      <div className="input-container">
+        <form id="age-form" onSubmit={handleSubmit}>
+          <div className="input-label-container">
+            <label htmlFor="day">Day</label>
+            <input
+              type="text"
+              id="day"
+              name="day"
+              value={formData.day}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label htmlFor="month">Month</label>
-        <input
-          type="text"
-          id="month"
-          name="month"
-          value={formData.month}
-          onChange={handleChange}
-        />
+          <div className="input-label-container">
+            <label htmlFor="month">Month</label>
+            <input
+              type="text"
+              id="month"
+              name="month"
+              value={formData.month}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label htmlFor="year">Year</label>
-        <input
-          type="text"
-          id="year"
-          name="year"
-          value={formData.year}
-          onChange={handleChange}
-        />
-      </form>
-
+          <div className="input-label-container">
+            <label htmlFor="year">Year</label>
+            <input
+              type="text"
+              id="year"
+              name="year"
+              value={formData.year}
+              onChange={handleChange}
+            />
+          </div>
+        </form>
+      </div>
       <AgeDisplay data={diffDates} />
-    </div>
+    </>
   );
 }
 
