@@ -12,7 +12,6 @@ root.render(
   <React.StrictMode>
     <InputField />
     <Button />
-    <AgeDisplay />
   </React.StrictMode>
 );
 

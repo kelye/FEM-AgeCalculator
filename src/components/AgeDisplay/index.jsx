@@ -1,13 +1,12 @@
 import React from "react";
 import InputField from "../InputField";
 
-function AgeDisplay(props) {
-  const years = "";
-  const months = "";
-  const days = "";
+function AgeDisplay({ data }) {
   return (
     <div>
-      <p>{props.diffYears}</p>
+      <p>Days: {data?.days}</p>
+      <p>Months: {data?.months}</p>
+      <p>Years: {data?.years}</p>
     </div>
   );
 }
