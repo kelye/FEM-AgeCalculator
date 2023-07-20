@@ -23,21 +23,32 @@ function InputField() {
   };
 
   const calculateDate = () => {
-    var date = moment(
-      `${formData.day}` + `${formData.month}` + `${formData.year}`,
-      "DD-MM-YYYY"
-    );
-    const currentDate = moment(new Date());
-    const dateDiff = moment.duration(currentDate.diff(date.toDate()));
-    let diffYears = dateDiff.years();
-    let diffMonths = dateDiff.months();
-    let diffDays = dateDiff.days();
-    setDiffDates({
-      ...diffDates,
-      years: diffYears,
-      months: diffMonths,
-      days: diffDays,
-    });
+    if (
+      formData.day > 31 ||
+      formData.day < 1 ||
+      formData.month > 12 ||
+      formData.month < 1 ||
+      formData.year > moment().year()
+    ) {
+      console.log("ERROR");
+    } else {
+      const currentDate = moment(new Date());
+      var date = moment(
+        `${formData.day}` + `${formData.month}` + `${formData.year}`,
+        "DD-MM-YYYY"
+      );
+
+      const dateDiff = moment.duration(currentDate.diff(date.toDate()));
+      let diffYears = dateDiff.years();
+      let diffMonths = dateDiff.months();
+      let diffDays = dateDiff.days();
+      setDiffDates({
+        ...diffDates,
+        years: diffYears,
+        months: diffMonths,
+        days: diffDays,
+      });
+    }
   };
 
   return (
@@ -48,6 +59,7 @@ function InputField() {
             <label htmlFor="day">Day</label>
             <input
               type="text"
+              placeholder="DD"
               id="day"
               name="day"
               value={formData.day}
@@ -59,6 +71,7 @@ function InputField() {
             <label htmlFor="month">Month</label>
             <input
               type="text"
+              placeholder="MM"
               id="month"
               name="month"
               value={formData.month}
@@ -70,6 +83,7 @@ function InputField() {
             <label htmlFor="year">Year</label>
             <input
               type="text"
+              placeholder="YYYY"
               id="year"
               name="year"
               value={formData.year}

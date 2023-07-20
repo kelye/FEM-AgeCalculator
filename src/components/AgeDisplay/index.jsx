@@ -4,12 +4,18 @@ import Button from "../Button";
 
 function AgeDisplay({ data }) {
   return (
-    <div>
+    <>
       <Button />
-      <p>Days: {data?.days}</p>
-      <p>Months: {data?.months}</p>
-      <p>Years: {data?.years}</p>
-    </div>
+      <p className="type">
+        <span className="numbers">{data?.years}</span> years
+      </p>
+      <p className="type">
+        <span className="numbers">{data?.months}</span> months
+      </p>
+      <p className="type">
+        <span className="numbers">{data?.days}</span> days
+      </p>
+    </>
   );
 }
 

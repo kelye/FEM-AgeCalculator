@@ -5,9 +5,19 @@ import icon from "./icon-arrow.svg";
 
 function Button() {
   return (
-    <button form="age-form" type="submit" alt="submit button">
-      <img className="button-icon" src={icon} />
-    </button>
+    <>
+      <div className="button-container">
+        <div className="line"></div>
+        <button
+          form="age-form"
+          type="submit"
+          alt="submit button"
+          className="submit-button"
+        >
+          <img className="button-icon" src={icon} />
+        </button>
+      </div>
+    </>
   );
 }
 
