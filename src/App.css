@@ -14,7 +14,7 @@ body {
 .main-container {
   background-color: hsl(0, 0%, 100%);
   width: 343px;
-  height: 486px;
+  height: 450px;
   border-bottom-right-radius: 100px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -64,6 +64,7 @@ label {
   height: 50px;
   border-radius: 10px;
   border: 1px solid hsl(0, 1%, 44%, 0.7);
+  padding-left: 14px;
 }
 
 .input-label-container {
@@ -72,6 +73,12 @@ label {
 
 .input-label-container:not(:first-child) {
   margin-left: 20px;
+}
+
+.input-label-container label {
+  opacity: 70%;
+  font-size: 10px;
+  letter-spacing: 3px;
 }
 
 .button-container {
@@ -84,6 +91,8 @@ label {
   position: absolute;
   height: 1px;
   width: 48%;
+  left: 0;
+  right: 0;
   background-color: hsl(0, 1%, 44%, 0.7);
 }
 
@@ -97,12 +106,23 @@ label {
   /* top: -40px; */
 }
 
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
 .type {
   font-size: 50px;
   color: hsl(0, 0%, 8%);
   font-style: italic;
   font-weight: 800;
   margin: 0;
+  height: 52px;
 }
 
 .type .numbers {

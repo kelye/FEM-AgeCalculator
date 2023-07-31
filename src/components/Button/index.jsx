@@ -7,7 +7,7 @@ function Button() {
   return (
     <>
       <div className="button-container">
-        <div className="line"></div>
+        {/* <div className="line"></div> */}
         <button
           form="age-form"
           type="submit"

@@ -23,14 +23,14 @@ function InputField() {
   };
 
   const calculateDate = () => {
-    if (
-      formData.day > 31 ||
-      formData.day < 1 ||
-      formData.month > 12 ||
-      formData.month < 1 ||
-      formData.year > moment().year()
-    ) {
-      console.log("ERROR");
+    if (formData.day == "" || formData.month == "" || formData.year == "") {
+      console.log("must be a valid date");
+    } else if (formData.day > 31 || formData.day < 1) {
+      console.log("Must be a valid day");
+    } else if (formData.month > 12 || formData.month < 1) {
+      console.log("Must be a valid month");
+    } else if (formData.year > moment().year()) {
+      console.log("Must be in the past");
     } else {
       const currentDate = moment(new Date());
       var date = moment(
@@ -56,7 +56,7 @@ function InputField() {
       <div className="input-container">
         <form id="age-form" onSubmit={handleSubmit}>
           <div className="input-label-container">
-            <label htmlFor="day">Day</label>
+            <label htmlFor="day">DAY</label>
             <input
               type="text"
               placeholder="DD"
@@ -68,7 +68,7 @@ function InputField() {
           </div>
 
           <div className="input-label-container">
-            <label htmlFor="month">Month</label>
+            <label htmlFor="month">MONTH</label>
             <input
               type="text"
               placeholder="MM"
@@ -80,7 +80,7 @@ function InputField() {
           </div>
 
           <div className="input-label-container">
-            <label htmlFor="year">Year</label>
+            <label htmlFor="year">YEAR</label>
             <input
               type="text"
               placeholder="YYYY"
